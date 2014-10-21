@@ -1,0 +1,252 @@
+                             For Vim version 7.3.
+            __  __               __  __          _ _             ~
+           |  \/  | __ _ _ __   |  \/  | ___  __| | | ___ _   _  ~
+           | |\/| |/ _` | '_ \  | |\/| |/ _ \/ _` | |/ _ \ | | | ~
+           | |  | | (_| | |_) | | |  | |  __/ (_| | |  __/ |_| | ~
+           |_|  |_|\__,_| .__/  |_|  |_|\___|\__,_|_|\___|\__, | ~
+                        |_|                               |___/  ~
+
+                           Random Vim Enhancements
+
+Author: Eric Squires
+====================================================================
+CONTENTS                                            *vim_map_medley*
+
+1. Installation ........................... |vim_map_medley_install|
+2. Mapping Summary ........................ |vim_map_medley_summary|
+3. Formatting ............................. |vim_map_medley_formatting|
+4. Insert Mode Enhancements ............... |vim_map_medley_insert|
+5. Programming Functions .................. |vim_map_medley_programming|
+6. Folding Enhancements ................... |vim_map_medley_fold|
+7. Non-Mapping Enhancements ............... |vim_map_medley_other|
+8. License ................................ |vim_map_medley_license|
+
+====================================================================
+
+1. Installation                             *vim_map_medley_install*
+
+    If using Pathogen,
+
+        1) place vim-map-medley directory in .vim/bundle
+        2) In vim, run ":Helptags"
+        3) Anytime you need help, just type ":h vim_map_medley.txt"
+
+    If not using Pathogen,
+
+        1) place vim-map-medley contents in .vim/
+        2) In vim, run ":helptags"
+        3) Anytime you need help, just type ":h vim_map_medley.txt"
+
+    If you don't have a local leader set, put the following in your .vimrc
+
+        let maplocalleader = "\\"
+        let mapleader = "\<space>"
+
+2. Mapping Summary                          *vim_map_medley_summary*
+
+2.1 Formatting ~
+
+|localleader_ac|  - align comments to the right of function calls
+|localleader_aa|  - change target column for <localleader>ac
+|localleader_cb|  - comment block (for c, matlab, python)
+|leader_w|        - toggle text width between 0 and 78
+
+2.3 Programming Functions ~
+
+|f5|              - runs ctags in the system shell
+|ctrl_f|          - prints the function parameters in the statusline (in
+                    insert mode)
+|localleader_ae|  - align equal signs in the visual selection
+|leader_p|        - change bracket type
+|leader_n|        - toggle line numbers
+|localleader_m|   - "run" the current file (for python, vim, and c files only)
+|leader_x|        - toggle syntax on/off
+|leader_z|        - remove trailing whitespace (e.g., for use with git)
+
+2.4 Insert mode mappings ~
+
+|jk|              - in insert mode, this switches back to normal mode
+|ctrl_d|          - enhanced control d
+|ctrl_f|          - prints the function parameters in the statusline
+
+2.6 Folding Enhancements ~
+
+|leader_j|        - puts cursor at next fold (or end of file if there is no fold)
+|leader_k|        - puts cursor at previous fold (or beg of file if there is no fold)
+|alt_j|           - opens the current fold (if applicable) and goes to the next fold
+|alt_k|           - closes the current fold (if applicable) and goes to the prev fold
+|ctrl_u|          - toggle fold (same as za)
+
+2.7 Other ~
+
+|leader_s|         - save buffer (mapped to ":w<cr>")
+
+====================================================================
+3. Formatting                                   *TabifyCommenting*
+
+*localleader_ac*
+
+        From visual mode, aligns comments that occur on the same line but
+        after language commands. Note that there is a default target column of
+        45.  When a user uses this mapping, they will be reminded
+        that |localleader_ac| can change the target column.
+
+        example:    a = foo()   #here is a comment
+                    b = func()      #here is another comment
+
+                    will turn into
+
+                    a = foo()       #here is a comment
+                    b = func()      #here is another comment
+
+        see also: |localleader_ae| to align equal signs
+
+*localleader_aa*
+
+        changes the target column for |localleader_ac|.
+        (same as :let g:comment_col = #)
+
+*localleader_cb*
+
+        inserts a comment block as shown below
+
+        ############################################################
+        #  <--cursor will be put here
+        ############################################################
+
+*leader_w*
+
+        toggles the textwidth between 0 and 78 in the local buffer. Useful
+        when programming and
+            a) comment blocks (e.g., at the beginning of functions) should
+            have limited width
+            b) programming commands should not have limited width
+
+====================================================================
+4. Insert mode mappings                             *TabifyInsert*
+
+*jk*      switch back to normal mode
+        (idea from http://learnvimscriptthehardway.stevelosh.com/)
+
+*ctrl_d*  enhanced control d.  In its native implementation, |ctrl_d|
+        functions like a reverse tab only when the cursor is in front of all
+        the text on a line.  The enhanced version works as follows:
+
+        case 1: there is all spaces prior to the cursor.  Remove spaces to the
+                previous tabstop.
+
+        example:
+        ******************************          ******************************
+                    some        text    ___\            some text
+        ^           ^                      /    ^           ^
+        line beg    cursor before "s"           line beg    cursor before "s"
+        ******************************          ******************************
+
+        case 2: there is a nonspace between the cursor and the beginning of
+                the line.  Remove spaces up to the previous tabstop or, if
+                there is a word in the way, remove alocalleader spaces up to
+                the end of the previous word
+
+        ******************************          ******************************
+                    some        text    ___\            some    text
+        ^                       ^          /    ^                   ^
+        line beg    cursor before "t"           line beg    cursor before "t"
+        ******************************          ******************************
+
+Text Files
+
+        abbreviations have been defined as follows
+        --  -> ------------------------------------------------------------
+        ==  -> ============================================================
+        **  -> ************************************************************
+
+====================================================================
+5. Programming Functions                             *TabifyProgramming*
+
+|f5|
+        runs ctags in the system shelocalleader to create a tags file in the
+        current directory (same as :!ctags -R<cr>)
+
+|ctrl_f|
+
+        prints the function parameters in the statusline.  In insert mode with
+        the cursor between a function parenthesis, hit |ctrl_f|.  To show the
+        normal status line, hit |ctrl_f| when outside the parenthesis.
+
+*localleader_ae*
+
+        functions the same as |localleader_ac| but uses equals.  Rather than
+        using a specified column to align to, it aligns equal signs as far
+        left as possible while keeping them in the same column.
+
+*leader_p*
+
+        changes bracket types. User should have cursor over a bracket (i.e.,
+        something that jumps when you hit "%") and will be prompted for what
+        to replace it with.  As long as the entry is two characters long,
+        there will be a successful replacement.  Nothing entered will simply
+        delete the brackets.
+
+        example:  def func(a,b)
+
+                  with the cursor on b in normal mode, hit leader_|p| and get
+                  Enter replacement for brackets (blank deletes):  []
+                  This then becomes
+
+                  def func[a,b]
+
+*leader_n*
+
+        toggles line numbers.  In version 7.4, line numbers and relative
+        numbers can be combined, so leader_n executes :setlocal number!<cr>
+        Prior to version 7.4, only number or relative number can be set at any
+        given time, so leader_n turns on relative number if number is on and
+        vice versa.
+
+*localleader_m*
+
+        For python files, run the script for the current buffer. Note the
+        quickfix will be populated with error messages.  For vim files, this
+        is equivalent to ":source %"
+
+*leader_x*
+
+        Vim syntax highlighting is fairly slow. This mapping turns it on/off.
+
+*leader_z*
+
+        remove trailing whitespace from file (useful with git)
+
+Line numbers
+
+        When Vim loses focus, it will automatically show absolute line
+        numbers. When it gains focus, it will revert to relative numbering.
+        This is true regardless of whether the debugger is on.
+
+see also: |ctrl_]| and |TabifyPythonDebugger|
+
+====================================================================
+6. Folding Enhancements                             *vim_map_medley_fold*
+
+*ctrl_j*  puts cursor at next fold (or end of file if there is no fold)
+*ctrl_k*  puts cursor at previous fold (or beg of file if there is no fold)
+*alt_j*   opens the current fold (if applicable) and goes to the next fold
+*alt_k*   closes the current fold (if applicable) and goes to the prev fold
+*ctrl_u*  toggles a fold
+
+====================================================================
+7. Non-Mapped Enhancements                          *vim_map_medley_other*
+
+Line Numbers
+
+        Relative numbering is set as the default (for Vim versions 7.4 and
+        above, the absolute number is shown for the current line). When Vim is
+        deactivated (reactivated), absolute (relative) line numbers will be
+        shown. To toggle line numbers, use |leader_n|.
+
+====================================================================
+8. License                                          *vim_map_medley_license*
+
+        see license.txt in the root directory
+
+ vim:tw=78:ts=8:ft=help:norl:
