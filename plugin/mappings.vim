@@ -34,8 +34,13 @@ nnoremap <leader>w :call ToggleTextWidth()<cr>
 
 function! ToggleTextWidth()
     if &textwidth==0
-        setlocal textwidth=78
-        echo "setlocal textwidth=78"
+        if &ft=='matlab'
+            setlocal textwidth=75
+            echo "setlocal textwidth=75"
+        else 
+            setlocal textwidth=78
+            echo "setlocal textwidth=78"
+        endif 
     else
         setlocal textwidth=0
         echo "setlocal textwidth=0"
