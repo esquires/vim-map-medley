@@ -37,10 +37,10 @@ function! ToggleTextWidth()
         if &ft=='matlab'
             setlocal textwidth=75
             echo "setlocal textwidth=75"
-        else 
+        else
             setlocal textwidth=78
             echo "setlocal textwidth=78"
-        endif 
+        endif
     else
         setlocal textwidth=0
         echo "setlocal textwidth=0"
@@ -61,9 +61,21 @@ endfunction
 
 nnoremap <leader>x :call ToggleSyntax()<cr>
 
+function! RemoveWhiteSpace()
+    try
+        %substitute/\v(^\s+$|\S\zs\s+$)/
+        execute "normal! \<c-o>"
+    catch
+        echo "no whitespace found"
+    endtry
+
+    nohl
+endfunction
+
 "highlighting/removal of extra whitespace
 highlight ending_whitespace ctermbg=LightGrey guibg=LightGray
-nnoremap <leader>z :%s/\v(\S\zs\s+$\|^\s+$)/<cr> :execute "normal! \<c-o>"<cr> :nohl<cr>
+nnoremap <leader>z :call RemoveWhiteSpace()<cr>
+
 
 let g:show_ending_whitespace = 1
 nnoremap <leader>Z :call Toggle_show_ending_whitespace()<cr>
