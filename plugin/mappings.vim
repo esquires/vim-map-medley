@@ -47,9 +47,6 @@ function! ToggleTextWidth()
     endif
 endfunction
 
-"toggle line numbers
-nnoremap <leader>n :call line_numbers#ToggleNumber()<cr>
-
 "toggle syntax (useful for latex files where syntax highlighting is slow)
 function! ToggleSyntax()
     if exists("g:syntax_on")
