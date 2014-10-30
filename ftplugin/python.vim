@@ -8,7 +8,6 @@ setlocal foldmethod=indent
 
 "comments dont do very well when the fold method is indent
 "see details here: http://stackoverflow.com/questions/8993455/how-do-i-fix-vim-to-properly-indent-folds-containing-python-comment-lines
-setlocal comments=:#
 setlocal formatoptions+=roc      "make sure to insert a comment after enter and o when the existing line is a comment
 setlocal nosmartindent
 
