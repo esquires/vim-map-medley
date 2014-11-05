@@ -15,9 +15,12 @@ inoremap <c-f> <esc>:call status_line#Set_status_line(1)<cr>i
 nnoremap <f5> :!ctags -R<CR>
 nnoremap <C-]> :call tags#Open_tag_in_new_tab()<cr>
 
-"easy movement between tabs (yes gt and <c-page> work, but this seems easier)
-nnoremap <c-l> gt
-nnoremap <c-h> gT
+"easy resizing of windows
+nnoremap <c-left>   <c-w><
+nnoremap <c-right>  <c-w>>
+nnoremap <c-up>     <c-w>+
+nnoremap <c-down>   <c-w>-
+nnoremap <a-w>      <c-w><c-w>
 
 " alignment stuff
     "easy access to change comment col: user will be reminded when using <localleader>ac

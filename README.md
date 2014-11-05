@@ -34,33 +34,41 @@ Mapping Summary
 
 2) Programming Functions
 
-    * \<f5\>          - runs ctags in the system shell
-    * \<c-f\>         - prints the function parameters in the statusline (in insert mode)
+    * <f5>            - runs ctags in the system shell
+    * <c-f>           - prints the function parameters in the statusline (in insert mode)
     * \ae             - align equal signs in the visual selection
-    * \<space\>p      - change bracket type
-    * \<space\>n      - toggle line numbers
+    * <space>p        - change bracket type
+    * <space>n        - toggle line numbers
     * \m              - "run" the current file (for python, vim, and c files only)
-    * \<space\>x      - toggle syntax on/off
-    * \<space\>z      - remove trailing whitespace (e.g., for use with git)
+    * <space>x        - toggle syntax on/off
+    * <space>z        - remove trailing whitespace (e.g., for use with git)
 
 3) Insert mode mappings
 
     * jk              - in insert mode, this switches back to normal mode
-    * \<c-d\>         - enhanced control d
-    * \<c-f\>         - prints the function parameters in the statusline
+    * <c-d>           - enhanced control d
+    * <c-f>           - prints the function parameters in the statusline
 
 4) Folding Enhancements
 
-    * \<space\>j      - puts cursor at next fold (or end of file if there is no fold)
-    * \<space\>k      - puts cursor at previous fold (or beg of file if there is no fold)
-    * alt_j           - opens the current fold (if applicable) and goes to the next fold
-    * alt_k           - closes the current fold (if applicable) and goes to the prev fold
-    * \<c-u\>         - toggle fold (same as za)
+    * <space>j        - puts cursor at next fold (or end of file if there is no fold)
+    * <space>k        - puts cursor at previous fold (or beg of file if there is no fold)
+    * <a-j>           - opens the current fold (if applicable) and goes to the next fold
+    * <a-k>           - closes the current fold (if applicable) and goes to the prev fold
+    * <c-u>           - toggle fold (same as za)
 
-5) Other
+5) Splits
 
-    * \<space\>s      - save buffer (mapped to ":w<cr>")
+    * <a-w>           - switch between split windows
+    * <c-left>        - decrease split width
+    * <c-right>       - increase split width
+    * <c-down>        - decrease split height
+    * <c-up>          - increase split height
 
-6) License
+6) Other
+
+    * <space>s        - save buffer (mapped to ":w<cr>")
+
+7) License
 
         see LICENSE in the root directory

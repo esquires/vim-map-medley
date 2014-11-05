@@ -1,7 +1,7 @@
 " comments
 vnoremap <buffer> <localleader>ac :<bs><bs><bs><bs><bs>call align#Align_comments("#", 1)<cr>
 nnoremap <buffer> <localleader>ac :call align#Align_comments("#", 0)<cr>
-nnoremap <buffer> <localleader>cb o<esc>60i#<esc>o# <cr><esc>60i#<esc>kA
+nnoremap <buffer> <localleader>cb o<esc>60i#<esc>o <cr><esc>59i<esc>kA
 
 "fold method
 setlocal foldmethod=indent

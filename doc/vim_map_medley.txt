@@ -77,9 +77,17 @@ CONTENTS                                            *vim_map_medley*
 |alt_k|           - closes the current fold (if applicable) and goes to the prev fold
 |ctrl_u|          - toggle fold (same as za)
 
+2.7 Splits ~
+
+|alt_w|           - switch between split windows
+|ctrl_left|       - decrease split width
+|ctrl_right|      - increase split width
+|ctrl_down|       - decrease split height
+|ctrl_up|         - increase split height
+
 2.7 Other ~
 
-|leader_s|         - save buffer (mapped to ":w<cr>")
+|leader_s|        - save buffer (mapped to ":w<cr>")
 
 ====================================================================
 3. Formatting                                   *TabifyCommenting*
@@ -233,16 +241,6 @@ see also: |ctrl_]| and |TabifyPythonDebugger|
 *alt_j*   opens the current fold (if applicable) and goes to the next fold
 *alt_k*   closes the current fold (if applicable) and goes to the prev fold
 *ctrl_u*  toggles a fold
-
-====================================================================
-7. Non-Mapped Enhancements                          *vim_map_medley_other*
-
-Line Numbers
-
-        Relative numbering is set as the default (for Vim versions 7.4 and
-        above, the absolute number is shown for the current line). When Vim is
-        deactivated (reactivated), absolute (relative) line numbers will be
-        shown. To toggle line numbers, use |leader_n|.
 
 ====================================================================
 8. License                                          *vim_map_medley_license*
