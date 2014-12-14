@@ -33,7 +33,11 @@ set foldnestmax=3
 set foldminlines=5
 "" }}}
 
-"remove toolbar, menubar, and left scrollbar in GVIM
+"remove toolbar, menubar, and left scrollbar in GVIM {{{
 set guioptions-=m
 set guioptions-=T
 set guioptions-=L
+" }}}
+
+"allow lines to wrap with lists
+set formatoptions+=n
