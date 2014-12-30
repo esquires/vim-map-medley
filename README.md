@@ -68,6 +68,7 @@ Mapping Summary
 6) Other
 
     * <space>s        - save buffer (mapped to ":w<cr>")
+    * <space>h        - :nohl<cr>
 
 7) License
 

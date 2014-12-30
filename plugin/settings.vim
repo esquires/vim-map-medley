@@ -39,5 +39,6 @@ set guioptions-=T
 set guioptions-=L
 " }}}
 
-"allow lines to wrap with lists
-set formatoptions+=n
+"allow lines to wrap with lists (n) and when joining lines,
+"remove the comment marker (j)
+set formatoptions+=nj

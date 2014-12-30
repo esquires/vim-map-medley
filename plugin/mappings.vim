@@ -21,7 +21,7 @@ nnoremap <c-right>  <c-w>>
 nnoremap <c-up>     <c-w>+
 nnoremap <c-down>   <c-w>-
 nnoremap <a-w>      <c-w><c-w>
-nnoremap <c-a-w>      <c-w>r
+nnoremap <c-a-w>    <c-w>r
 
 " alignment stuff
     "easy access to change comment col: user will be reminded when using <localleader>ac
@@ -61,6 +61,7 @@ function! ToggleSyntax()
 endfunction
 
 nnoremap <leader>x :call ToggleSyntax()<cr>
+nnoremap <leader>h :nohl<cr>
 
 function! RemoveWhiteSpace()
     try

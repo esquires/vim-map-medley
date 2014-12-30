@@ -88,6 +88,8 @@ CONTENTS                                            *vim_map_medley*
 2.7 Other ~
 
 |leader_s|        - save buffer (mapped to ":w<cr>")
+|leader_h|        - :nohl<cr>
+
 
 ====================================================================
 3. Formatting                                   *TabifyCommenting*
