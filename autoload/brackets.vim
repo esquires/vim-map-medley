@@ -52,9 +52,23 @@ function! brackets#B_chg_brackets()
 
     else
 
-        execute "normal! x"
-        call setpos('.',old_pos)
-        execute "normal! x"
+	    if (new_pos[1] > old_pos[1]) || (new_pos[1] ==? old_pos[1] && new_pos[2] > old_pos[2])
+            execute "normal! x"
+            call setpos('.',old_pos)
+            execute "normal! x"
+        else 
+
+            "cursor started at end of pair when it is deleted, the "old_pos"
+            "will move down 1 column (except when it started at the beginning
+            "of a line)
+            if old_pos[2] != 1
+                let old_pos[2] -= 1
+            endif  
+
+            execute "normal! x"
+            call setpos('.',old_pos)
+            execute "normal! x"
+        endif 
 
     endif
 
