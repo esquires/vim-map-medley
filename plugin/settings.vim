@@ -1,6 +1,7 @@
 "so that <alt-h> works, etc
 "see http://vim.wikia.com/wiki/Key_maps_using_the_Alt_modifier
 :set winaltkeys=no
+set guitablabel=\%M\%t
 
 "look and feel {{{
 syntax on           " enable syntax highlighting
