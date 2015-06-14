@@ -8,5 +8,3 @@ set foldmethod=syntax
 
 "handling comments
 setlocal formatoptions+=roct
-
-nnoremap <localleader>m :make!<cr>

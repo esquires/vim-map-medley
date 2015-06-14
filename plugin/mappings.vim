@@ -100,3 +100,6 @@ call status_line#Set_status_line(0)
 
 "saving
 nnoremap <leader>s :w<cr>
+
+"making
+nnoremap <localleader>m :make!<cr>

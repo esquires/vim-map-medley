@@ -15,4 +15,3 @@ setlocal nosmartindent
 setlocal makeprg=python\ %
 setlocal efm=%A\ \ File\ \"%f\"\\,\ line\ %l%m,%Z%[%^\ ]%\\@=%m
 "setlocal efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-nnoremap <buffer> <localleader>m :make!<cr>
