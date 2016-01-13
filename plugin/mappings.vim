@@ -93,6 +93,14 @@ function! Toggle_show_ending_whitespace()
     endif
 endfunction
 
+function! AddHeader(txt)
+    let len=strlen(getline(line('.')-1))
+    execute "normal! 0".len."i".a:txt
+endfunction
+
+nnoremap <localleader>- :call AddHeader('-')<cr>
+nnoremap <localleader>= :call AddHeader('=')<cr>
+
 "initialization for when vim starts up
 "will call S:Set_status_line for function parameters
 set laststatus=2

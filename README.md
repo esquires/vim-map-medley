@@ -31,6 +31,7 @@ Mapping Summary
     * \aa             - change target column for <localleader>ac
     * \cb             - comment block (for c, matlab, python)
     * <space>w        - toggle text width between 0 and 78
+    * \-, \=          - add a row of "-" or "=" of length equal to the previous line
 
 2) Programming Functions
 

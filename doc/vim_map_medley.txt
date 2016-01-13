@@ -50,6 +50,8 @@ CONTENTS                                            *vim_map_medley*
 |localleader_aa|  - change target column for <localleader>ac
 |localleader_cb|  - comment block (for c, matlab, python)
 |leader_w|        - toggle text width between 0 and 78
+|localleader_\|   - add a row of "-" of length equal to the previous line
+|localleader_=|   - add a row of "=" of length equal to the previous line
 
 2.3 Programming Functions ~
 
