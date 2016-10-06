@@ -12,7 +12,7 @@ inoremap <c-f> <esc>:call status_line#Set_status_line(1)<cr>i
 
 " ctags: run the ctags program in the shell with F5
 " (note :cd will get the shell in the appropriate spot)
-nnoremap <f5> :!ctags -R<CR>
+nnoremap <f5> :!ctags -R --extra=+f<CR>
 nnoremap <C-]> :call tags#Open_tag_in_new_tab()<cr>
 
 "easy resizing of windows
