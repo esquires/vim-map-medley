@@ -82,12 +82,12 @@ function! status_line#Set_status_line(add_func_params)
         endif
     endif
 
-    set statusline+=%10l/%-10L	"line number / total lines
-    set statusline+=%-10c
-    set statusline+=%-20y		"show the file-type
+    set statusline+=%6l/%-8L	"line number / total lines
+    set statusline+=%-4c
+    set statusline+=%-8y		"show the file-type
 
     set statusline+=%=			"now go to the right side of the statusline
     set statusline+=%-3m
-    set statusline+=%F			"full path on the right side
+    set statusline+=%<%F			"full path on the right side
 
 endfunction
