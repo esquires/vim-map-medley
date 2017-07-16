@@ -12,6 +12,6 @@ setlocal formatoptions+=roc      "make sure to insert a comment after enter and 
 setlocal nosmartindent
 
 " compilation
-setlocal makeprg=python\ %
-setlocal efm=%A\ \ File\ \"%f\"\\,\ line\ %l%m,%Z%[%^\ ]%\\@=%m
+"setlocal makeprg=python\ %
+"setlocal efm=%A\ \ File\ \"%f\"\\,\ line\ %l%m,%Z%[%^\ ]%\\@=%m
 "setlocal efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
