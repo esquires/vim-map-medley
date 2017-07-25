@@ -4,7 +4,7 @@ nnoremap <buffer> <localleader>ac :call align#Align_comments("#", 0)<cr>
 nnoremap <buffer> <localleader>cb o<esc>60i#<esc>o <cr><esc>59i#<esc>kA
 
 "fold method
-setlocal foldmethod=indent
+"setlocal foldmethod=indent
 
 "comments dont do very well when the fold method is indent
 "see details here: http://stackoverflow.com/questions/8993455/how-do-i-fix-vim-to-properly-indent-folds-containing-python-comment-lines
