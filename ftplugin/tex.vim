@@ -3,4 +3,5 @@
 "columns. For some reason this does not seem to affect other filetypes
 setlocal synmaxcol=70
 iabbrev == &=&
-setl indentexpr=
+setlocal indentexpr=
+setlocal foldmethod=expr
