@@ -63,4 +63,6 @@ hi Todo         ctermfg=245     cterm=none      guifg=#8f8f8f   gui=italic
 hi! link FoldColumn     Folded
 hi! link CursorColumn   CursorLine
 
+" Spell
+hi SpellCap cterm=underline ctermbg=blue ctermfg=black
 " vim:set ts=4 sw=4 noet:
