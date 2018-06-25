@@ -5,6 +5,7 @@ nnoremap <buffer> <localleader>cb o/<esc>59i/<esc>o<cr><esc>58i/<esc>kA
 
 "fold method
 set foldmethod=syntax
+setlocal colorcolumn=80
 
 "handling comments
-setlocal formatoptions+=roct
+setlocal formatoptions+=rct
