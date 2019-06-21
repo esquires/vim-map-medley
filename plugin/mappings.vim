@@ -94,8 +94,12 @@ function! Toggle_show_ending_whitespace()
 endfunction
 
 function! AddHeader(txt)
-    let len=strlen(getline(line('.')-1))
-    execute "normal! 0".len."i".a:txt
+    execute "normal! ^"
+    let num_spaces=col('.') - 1
+    execute "normal! o"
+    execute "normal! ".num_spaces."i "
+    let len=strlen(getline(line('.')-1)) - num_spaces
+    execute "normal! ".len."a".a:txt
 endfunction
 
 nnoremap <localleader>- :call AddHeader('-')<cr>
