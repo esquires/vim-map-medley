@@ -97,7 +97,9 @@ function! AddHeader(txt)
     execute "normal! ^"
     let num_spaces=col('.') - 1
     execute "normal! o"
-    execute "normal! ".num_spaces."i "
+    if num_spaces > 0
+        execute "normal! ".num_spaces."i "
+    endif
     let len=strlen(getline(line('.')-1)) - num_spaces
     execute "normal! ".len."a".a:txt
 endfunction
