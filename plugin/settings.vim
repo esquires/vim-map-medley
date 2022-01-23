@@ -25,7 +25,7 @@ set ignorecase		" guess whether case sensitive or not
 
 "other settings  {{{
 syntax spell toplevel
-set wildmode=longest,list,full	" make command line work like bash
+" set wildmode=longest,list,full	" make command line work like bash
 set history=1000             " length of history for q:
 set foldcolumn=0
 set foldmethod=indent

@@ -1,1 +1,1 @@
-call TexNewMathZone("IEEEeqnarray","IEEEeqnarray",1)
+" call TexNewMathZone("IEEEeqnarray","IEEEeqnarray",1)

@@ -1,9 +1,6 @@
 "folding
 nnoremap <leader>k :call fold#Move_to_prev_fold()<cr>
 nnoremap <leader>j :call fold#Move_to_next_fold(0)<cr>
-nnoremap <A-j> :call fold#Move_to_next_fold(1)<cr>
-nnoremap <A-k> :call fold#Close_fold_and_move_up()<cr>
-nnoremap <c-u> za
 
 "insert mode mappings
 inoremap jk <esc>
@@ -21,13 +18,6 @@ nnoremap <c-up>     <c-w>+
 nnoremap <c-down>   <c-w>-
 nnoremap <a-w>      <c-w><c-w>
 nnoremap <c-a-w>    <c-w>r
-
-" alignment stuff
-    "easy access to change comment col: user will be reminded when using <localleader>ac
-    nnoremap <localleader>aa :let g:comment_col=
-
-    "align equals
-    vnoremap <localleader>ae :<bs><bs><bs><bs><bs>call align#Align_equals()<cr>
 
 "changing brackets
 nnoremap <leader>p :call brackets#B_chg_brackets()<cr>
@@ -76,21 +66,6 @@ endfunction
 "highlighting/removal of extra whitespace
 highlight ending_whitespace ctermbg=LightGrey guibg=LightGray
 nnoremap <leader>z :call RemoveWhiteSpace()<cr>
-
-
-let g:show_ending_whitespace = 1
-nnoremap <leader>Z :call Toggle_show_ending_whitespace()<cr>
-function! Toggle_show_ending_whitespace()
-    if g:show_ending_whitespace
-        match ending_whitespace /\v(\S\zs\s+$|^\s+$)/
-        let g:show_ending_whitespace = 0
-        echo "showing whitespace errors"
-    else
-        match none ending_whitespace
-        let g:show_ending_whitespace = 1
-        echo "not showing whitespace errors"
-    endif
-endfunction
 
 function! AddHeader(txt)
     execute "normal! ^"
