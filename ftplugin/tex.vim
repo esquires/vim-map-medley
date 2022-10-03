@@ -1,7 +1,7 @@
 "tex files get really slow with long lines.
 "since this is due to syntax highlighting, limit it to only the first 100
 "columns.
-setlocal synmaxcol=100
+" setlocal synmaxcol=100
 setlocal foldlevelstart=99
 iabbrev == &=&
 setlocal indentexpr=
