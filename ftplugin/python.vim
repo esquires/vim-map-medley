@@ -3,7 +3,8 @@ vnoremap <buffer> <localleader>ac :<bs><bs><bs><bs><bs>call align#Align_comments
 nnoremap <buffer> <localleader>ac :call align#Align_comments("#", 0)<cr>
 nnoremap <buffer> <localleader>cb o<esc>60i#<esc>o# <cr><esc>59i#<esc>kA
 
-setlocal colorcolumn=80
+setlocal colorcolumn=89
+" setlocal textwidth=89
 highlight ColorColumn ctermbg=DarkGray
 
 "fold method
