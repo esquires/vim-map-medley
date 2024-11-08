@@ -3,7 +3,7 @@
 "columns.
 " setlocal synmaxcol=100
 setlocal foldlevelstart=99
-iabbrev == &=&
+" iabbrev == &=&
 setlocal indentexpr=
 setlocal foldmethod=expr
 setlocal concealcursor=
